@@ -10,23 +10,27 @@ const CenterContainer = () => {
     const innerWidthStore = useInnerWidth()
     const [width, setWidth] = useState(window.innerWidth)
 
-
     const centerContainerHeight = useCenterContainerHeight()
     const centerContainerRef = useRef(null)
     const [height, setHeight] = useState(null)
 
     const [flagLineBreak, setFlagLineBreak] = useState(window.innerWidth < 450 ? true : false)
-    window.addEventListener('resize', () => {
-        window.innerWidth < 421 ? setFlagLineBreak(true) : setFlagLineBreak(false)
-        setWidth(window.innerWidth)
-    })
+
+    useEffect(() => {
+        // Обработчик ресайза для ширины и переноса
+        const handleResize = () => {
+            window.innerWidth < 421 ? setFlagLineBreak(true) : setFlagLineBreak(false)
+            setWidth(window.innerWidth)
+        }
+        
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, []) // Пустой массив - вешается один раз
 
     useEffect(() => {
         // ------ Передаем ширину экрана в store START ----------
         innerWidthStore.setInnerWidth(width)
         // ------ Передаем ширину экрана в store END ----------
-
-        
 
         // ------ Передаем высоту CenterContainer в store START ----------
         function updateHeight() {
@@ -44,7 +48,8 @@ const CenterContainer = () => {
             resizeObserver.disconnect()
         }
         // ------ Передаем высоту CenterContainer в store END ----------
-    },[height, width])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[height, width]) // Линтер тупит - store-объекты стабильны, их НЕ надо добавлять
 
     return (
         <div ref={centerContainerRef} className={styles.centerContainer}>
@@ -54,6 +59,5 @@ const CenterContainer = () => {
         </div>
     )
 }
-
 
 export default CenterContainer
