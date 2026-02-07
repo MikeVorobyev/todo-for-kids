@@ -1,0 +1,67 @@
+
+.row_wrapper {
+    position: relative;
+    .row {
+        position: relative;
+        display: flex;
+        align-items: center;
+    
+        z-index: 0;
+        background-color: #F7F1DB;
+
+        .check_box_container {
+            max-width: 155px;
+            width: 100%;
+
+            @media(max-width: 980px) {
+                max-width: 110px;
+            }
+
+            @media(max-width: 680px) {
+                max-width: 90px;
+            }
+
+            @media(max-width: 580px) {
+                max-width: 70px;
+            }
+
+            @media(max-width: 380px) {
+                max-width: 60px;
+            }
+        }
+
+        .line_vertical {
+            height: 120px;
+
+            @media(max-width: 1380px) {
+                height: 90px;
+            }
+            @media(max-width: 980px) {
+                height: 70px;
+            }
+            @media(max-width: 680px) {
+                height: 50px;
+            }
+            @media(max-width: 480px) {
+                height: 40px;
+            }
+        }
+
+    }
+
+    .line_horizontal_bottom {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        // height: 6px;
+        transform: translateY(5px);
+    }
+}
+
+
+
+
+
+

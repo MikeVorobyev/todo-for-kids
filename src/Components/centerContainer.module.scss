@@ -1,0 +1,111 @@
+
+
+.centerContainer {
+    position: relative;
+    z-index: 50;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 34px;
+
+    .title {
+        font-size: 64px;
+        line-height: 1;
+        margin: 0 0 0 0;
+        padding-bottom: 35px;
+
+        @media(max-width: 1300px) {
+            padding-bottom: 50px;
+        }
+
+        @media(max-width: 870px) {
+            padding-bottom: 50px;
+            font-size: 48px;
+        }
+
+        @media(max-width: 700px) {
+            font-size: 42px;
+        }
+
+        @media(max-width: 680px) {
+            font-size: 32px;
+        }
+
+        
+        @media(max-width: 520px) {
+            font-size: 26px;
+        }
+
+        @media(max-width: 450px) {
+            font-weight: normal;
+            font-size: 32px;
+        }
+
+        @media(max-width: 420px) {
+            padding-bottom: 36px;
+        }
+    }
+
+    @media(max-width: 2715px) {
+        padding-bottom: 44px;
+    }
+
+    @media(max-width: 1920px) {
+        padding-bottom: 34px;
+    }
+
+    @media(max-width: 1380px) {
+        padding-bottom: 94px;
+    }
+
+    @media(max-width: 1300px) {
+        padding-bottom: 25px;
+    }
+
+    @media(max-width: 980px) {
+        padding-bottom: 65px;
+    }
+
+    @media(max-width: 870px) {
+        padding-bottom: 81px;
+    }
+
+    @media(max-width: 797px) {
+        padding-bottom: 82px;
+    }
+
+    @media(max-width: 787px) {
+        padding-bottom: 83px;
+    }
+
+    @media(max-width: 780px) {
+        padding-bottom: 78px;
+    }
+
+    @media(max-width: 700px) {
+        padding-bottom: 84px;
+    }
+
+    @media(max-width: 680px) {
+        padding-bottom: 46px;
+    }
+
+    @media(max-width: 520px) {
+        padding-bottom: 52px;
+    }
+
+    @media(max-width: 480px) {
+        padding-bottom: 22px;
+    }
+
+    @media(max-width: 450px) {
+        padding-bottom: 16px;
+    }
+
+    @media(max-width: 420px) {
+        padding-bottom: 43px;
+    }
+
+    @media(max-width: 360px) {
+        padding-bottom: 53px;
+    }
+}

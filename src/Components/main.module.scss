@@ -1,0 +1,50 @@
+@import url(../fonts/fonts.module.scss);
+
+.main_container {
+    font-family: 'LeoHand-Light';
+    letter-spacing: 4px;
+    background-color: rgb(34, 43, 75);
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 15vw 70vw 15vw;
+    grid-template-rows: auto;
+
+    grid-template-areas:
+    "wrap_left_sideContainer wrap_centerContainer wrap_right_sideContainer";
+
+    .wrap_left_sideContainer {
+        grid-area: wrap_left_sideContainer;
+
+        @media(max-width: 480px) {
+            display: none;
+        }
+    }
+    .wrap_centerContainer {
+        grid-area: wrap_centerContainer;
+        border-radius: 10px;
+    
+        @media(max-width: 580px) {
+            margin: 0 20px 0 20px;
+        }
+
+        @media(max-width: 480px) {
+            margin: 0 10px 0 10px;
+        }
+    }
+
+    .wrap_right_sideContainer {
+        grid-area: wrap_right_sideContainer;
+
+        @media(max-width: 480px) {
+            display: none;
+        }
+    }
+    
+
+    @media(max-width: 580px) {
+        grid-template-areas:
+        "wrap_centerContainer wrap_centerContainer wrap_centerContainer";
+    }
+}
