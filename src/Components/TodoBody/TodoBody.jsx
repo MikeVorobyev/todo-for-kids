@@ -13,7 +13,7 @@ const TodoBody = () => {
     const taskTodo = useToDoStore()
     const innerWidth = useInnerWidth()
  
-    const test = () => {
+    const getRowsCount = () => {
         switch (true) {
             case innerWidth.initInnerWidth <= 420:
                 return 14
@@ -36,7 +36,7 @@ const TodoBody = () => {
         }
     }
 
-    const todoEmptyLineLength =  test() - (taskTodo.arrayToDoList.length) < 0 ? 0 : test() - (taskTodo.arrayToDoList.length) // Количество отрисовываемых пустых линий
+    const todoEmptyLineLength =  getRowsCount() - (taskTodo.arrayToDoList.length) < 0 ? 0 : getRowsCount() - (taskTodo.arrayToDoList.length) // Количество отрисовываемых пустых линий
     const allItemsLength = todoEmptyLineLength > 0 ? todoEmptyLineLength + taskTodo.arrayToDoList.length : taskTodo.arrayToDoList.length // Количество отрисованных Todo + пустые линии
 
     let a = taskTodo.arrayToDoList.length % 8 // Индекс для отрисовки вертикальных линий в пустых строках
