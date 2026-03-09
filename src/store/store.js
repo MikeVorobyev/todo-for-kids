@@ -35,12 +35,22 @@ const useToDoStore = create(
                 : e)
             ] }))},
         
-            deleteTask: (id) => set((state) => ({arrayToDoList: [...state.arrayToDoList.filter((e) => e.id !== id)]}))
+            deleteTask: (id) => set((state) => {
+                const newArrayToDoList = [...state.arrayToDoList.filter((e) => e.id !== id)]
+                
+                setTimeout(() => {
+                    if(newArrayToDoList.length === 0) {
+                        localStorage.removeItem('todos-storage')
+                    }
+                }, 10)
+
+                return {arrayToDoList: newArrayToDoList}
+            })
         }),
 
         {
             name: 'todos-storage',
-            getStorage: () => localStorage
+            getStorage: () => localStorage,
         }
     )
 )
