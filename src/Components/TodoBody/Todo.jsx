@@ -68,7 +68,7 @@ const Todo = ({ task, lineVertical }) => {
                 <img id={lineVertical.id} className={styles.line_vertical} src={lineVertical.link} alt={lineVertical.name} />
 
                 <div className={styles.right_container}>
-                    <input ref={inputTextRef} className={`${styles.text_input} ${task.completed && styles.text_completed} ${styles.text_completed__line_through}`} type="text" value={task.text}/>
+                    <input ref={inputTextRef} className={`${styles.text_input} ${task.completed && styles.text_completed} ${styles.text_completed__line_through}`} readOnly type="text" value={task.text}/>
 
                     <div className={styles.wastebasket_wrapper} onClick={() => deletOnClick()}>
                         <img className={`${styles.wastebasket_body} ${styles.wastebasket}`} src={wastebasket_body} alt="wastebasket_body" />
