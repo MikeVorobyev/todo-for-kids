@@ -2,7 +2,7 @@
   "name": "todo_app_react_zustand",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://mikevorobyev.github.io/todo-for-kids",
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",
